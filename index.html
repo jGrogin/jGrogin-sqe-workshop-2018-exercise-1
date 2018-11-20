@@ -37,7 +37,21 @@
             <tr>
                 <td>
                     <div class="textAreaWrapper">
-                        <textarea id="codePlaceholder" title="Enter code here"></textarea>
+                        <textarea id="codePlaceholder" title="Enter code here">function binarySearch(X, V, n){
+    let low, high, mid;
+    low = 0;
+    high = n - 1;
+    while (low <= high) {
+        mid = (low + high)/2;
+        if (X < V[mid])
+            high = mid - 1;
+        else if (X > V[mid])
+            low = mid + 1;
+        else
+            return mid;
+    }
+    return -1;
+}</textarea>
                     </div>
                 </td>
                 <td>
@@ -50,6 +64,7 @@
                 <td>
                     <div>
                         <button id="codeSubmissionButton">Parse code</button>
+                        <button id="codeTableSubmissionButton">Create Table</button>
                     </div>
                 </td>
                 <td>
@@ -57,6 +72,27 @@
             </tr>
         </table>
 
+        <table id="t1" class="t1">
+
+        </table>
+        <style>
+            table.t1 {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            table.t1 td, table.t1 th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            table.t1 tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
         <script src="dist/bundle.js"></script>
     </body>
+
 </html>
